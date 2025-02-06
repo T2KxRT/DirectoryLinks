@@ -1,0 +1,348 @@
+body {
+  font-family: Arial, sans-serif, italic, Bold;
+  margin: 0;
+  padding: 0;
+  background-color: #ff00005f; /* Solid black background */
+  color: hsl(0, 100%, 93%);
+  position: relative;
+  overflow: hidden; /* Prevent scrollbars due to the fog trail */
+  background-image: url('vernyo/callyo.gif'); /* GIF background */
+  background-size: cover; /* Cover the full height and width */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent repeating the background image */
+  background-attachment: fixed; /* Fix the background image to the viewport */
+  cursor: url('https://www.shareicon.net/download/2016/07/08/117262_edit_512x512.png'), auto; /* Custom cursor */
+  opacity: 0; /* Initial opacity */
+  animation: fadeIn 2s forwards; /* Fade in animation */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.959), rgba(139, 0, 0, 0.103)); /* Faded red overlay */
+  pointer-events: none; /* Ensures the overlay doesn't interfere with interactions */
+}
+
+header {
+  color: rgb(255, 255, 255);
+  padding: 20px;
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+  position: relative; /* Ensures the header is above the overlay */
+}
+
+header h1 {
+  font-family: 'Georgia', serif; /* Fancy font */
+  font-style: italic; /* Italic text */
+  background-color: rgba(255, 255, 255, 0.2); /* Highlight effect */
+  padding: 10px;
+  border-radius: 5px; /* Rounded corners for the highlight */
+  display: inline-block; /* Ensures the highlight only covers the text */
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #3f1f1f15;
+  color: white;
+  position: relative; /* Ensures the footer is above the overlay */
+}
+
+#location {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.2em;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+/* Lightning Strike Effect */
+.lightning-strike {
+  position: absolute;
+  width: 2px; /* Thin line for the lightning */
+  height: 100px; /* Length of the lightning */
+  background: linear-gradient(to bottom, rgba(255, 0, 0, 0.8), rgba(0, 123, 255, 0.178)); /* Faint red to transparent gradient */
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%); /* Spiky triangle shape */
+  pointer-events: none; /* Ensures the lightning doesn't interfere with interactions */
+  transform-origin: bottom  css
+  center; /* Rotate from the bottom center */
+  animation: lightningSpread 0.5s forwards;
+}
+
+@keyframes lightningSpread {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scaleY(0.1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scaleY(1.5);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scaleY(2.5);
+  }
+}
+
+/* Updated Music Button Styles */
+#musicButton {
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 1.2em;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: transparent; /* Transparent background */
+  border: 2px solid transparent; /* Transparent border */
+  color: #00FF00; /* Green neon for "Play Music" */
+  text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00, 0 0 20px #00FF00; /* Neon glow effect */
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+#musicButton.paused {
+  color: #FF0000; /* Red neon for "Pause Music" */
+  text-shadow: 0 0 5px #FF0000, 0 0 10px #FF0000, 0 0 20px #FF0000; /* Neon glow effect */
+}
+
+/* Neon Glow Effect for Platform Icons */
+.fab {
+  text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 20px currentColor;
+  transition: text-shadow 0.3s ease-in-out;
+}
+
+.fab:hover {
+  text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 60px currentColor;
+}
+
+/* Neon Glow Effect for Dani Clicker Icon */
+.fas.fa-user {
+  text-shadow: 0 0 5px #FF4500, 0 0 10px #FF4500, 0 0 20px #FF4500;
+  transition: text-shadow 0.3s ease-in-out;
+}
+
+.fas.fa-user:hover {
+  text-shadow: 0 0 10px #FF4500, 0 0 20px #FF4500, 0 0 60px #FF4500;
+}
+
+/* Neon Glow Effect for the Question Mark Icon */
+.fas.fa-question {
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+  transition: text-shadow 0.3s ease-in-out;
+}
+
+.fas.fa-question:hover {
+  text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 60px #ffffff;
+}
+
+#localFilesPopup {
+  display: none; /* Initially hidden */
+}
+
+a {
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #FFAAAA; /* Change color on hover */
+}
+
+/* Aggressive Glitch Effect for Pop-up */
+#localFilesPopup {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#localFilesPopup.active {
+  opacity: 1;
+  animation: aggressiveGlitch 0.5s forwards; /* Play once and stop */
+}
+
+#localFilesPopup.closing {
+  animation: aggressiveGlitchReverse 0.5s forwards; /* Play once and stop */
+}
+
+@keyframes aggressiveGlitch {
+  0% {
+    transform: translate(-50%, -50%) scale(0.5) rotate(0deg);
+    opacity: 0;
+    filter: brightness(200%) contrast(200%);
+  }
+  20% {
+    transform: translate(-50%, -50%) scale(1.2) rotate(5deg);
+    opacity: 1;
+    filter: brightness(300%) contrast(300%);
+  }
+  40% {
+    transform: translate(-50%, -50%) scale(0.8) rotate(-5deg);
+    filter: brightness(200%) contrast(200%);
+  }
+  60% {
+    transform: translate(-50%, -50%) scale(1.1) rotate(3deg);
+    filter: brightness(300%) contrast(300%);
+  }
+  80% {
+    transform: translate(-50%, -50%) scale(0.9) rotate(-3deg);
+    filter: brightness(200%) contrast(200%);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    opacity: 1;
+    filter: brightness(100%) contrast(100%);
+  }
+}
+
+@keyframes aggressiveGlitchReverse {
+  0% {
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    opacity: 1;
+    filter: brightness(100%) contrast(100%);
+  }
+  20% {
+    transform: translate(-50%, -50%) scale(0.9) rotate(-3deg);
+    opacity: 1;
+    filter: brightness(200%) contrast(200%);
+  }
+  40% {
+    transform: translate(-50%, -50%) scale(1.1) rotate(3deg);
+    opacity: 1;
+    filter: brightness(300%) contrast(300%);
+  }
+  60% {
+    transform: translate(-50%, -50%) scale(0.8) rotate(-5deg);
+    opacity: 1;
+    filter: brightness(200%) contrast(200%);
+  }
+  80% {
+    transform: translate(-50%, -50%) scale(1.2) rotate(5deg);
+    opacity: 1;
+    filter: brightness(300%) contrast(300%);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.5) rotate(0deg);
+    opacity: 0;
+    filter: brightness(200%) contrast(200%);
+  }
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+
+  header h1 {
+    font-size: 1.5em; /* Reduce header font size */
+    padding: 10px; /* Adjust padding */
+  }
+
+  main p {
+    font-size: 1em; /* Adjust paragraph font size */
+  }
+
+  /* Adjust the music button */
+  #musicButton {
+    font-size: 1em;
+    padding: 8px;
+  }
+
+  /* Adjust the footer */
+  footer p {
+    font-size: 0.9em;
+    padding: 5px;
+  }
+
+  /* Adjust the grid layout for local files popup */
+  #localFilesPopup div {
+    grid-template-columns: 1fr; /* Stack links vertically on mobile */
+  }
+
+  /* Adjust the spacing between buttons and links */
+  div[style*="display: flex"] {
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Reduce gap between items */
+  }
+
+  /* Adjust the popup width */
+  #localFilesPopup {
+    width: 90%; /* Make the popup take up most of the screen */
+    padding: 10px;
+  }
+}
+
+/* Tablet Styles */
+@media only screen and (max-width: 1024px) and (min-width: 769px) {
+  body {
+    font-size: 16px; /* Slightly larger font size for tablets */
+  }
+
+  header h1 {
+    font-size: 2em; /* Adjust header font size */
+  }
+
+  /* Adjust the grid layout for local files popup */
+  #localFilesPopup div {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
+  }
+}
+
+#localFilesPopup {
+  display: none; /* Initially hidden */
+  position: fixed; /* Fixed position for smooth animation */
+  top: 50%; /* Center vertically */
+  left: 100%; /* Move to right side, outside the screen */
+  transform: translate(0, -50%); /* Center vertically */
+  background-color: rgba(0, 0, 0, 0.9); /* Dark background */
+  padding: 20px; /* Add some padding */
+  border-radius: 10px; /* Rounded corners */
+  z-index: 1000; /* Ensure it's on top of other elements */
+  width: 400px; /* Set width */
+  text-align: center; /* Center text */
+  transition: left 0.5s ease-in-out; /* Smooth animation */
+}
+
+#localFilesPopup.active {
+  left: 50%; /* Move to center */
+  transform: translate(-50%, -50%); /* Center both vertically and horizontally */
+}
+
+#spicetifyPopup {
+  display: none; /* Initially hidden */
+  position: fixed; /* Fixed position for smooth animation */
+  top: 50%; /* Center vertically */
+  left: 100%; /* Move to right side, outside the screen */
+  transform: translate(0, -50%); /* Center vertically */
+  background-color: rgba(0, 0, 0, 0.9); /* Dark background */
+  padding: 20px; /* Add some padding */
+  border-radius: 10px; /* Rounded corners */
+  z-index: 1000; /* Ensure it's on top of other elements */
+  width: 400px; /* Set width */
+  text-align: center; /* Center text */
+  transition: left 0.5s ease-in-out; /* Smooth animation */
+}
+
+#spicetifyPopup.active {
+  left: 50%; /* Move to center */
+  transform: translate(-50%, -50%); /* Center both vertically and horizontally */
+}
